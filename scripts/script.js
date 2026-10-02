@@ -4,9 +4,9 @@
 const barcos = [
     {
         id: 1,
-        nome: "Lancha Kraken 300 Special",
-        tipo: "lancha",      // lancha, iate, veleiro, jetski
-        modalidade: "venda", // venda ou aluguel
+        nome: "Barco de Pescador",
+        tipo: "lancha",      
+        modalidade: "venda", 
         preco: 280000,
         precoFormatado: "R$ 280.000",
         especificacoes: "30 Pés • Cap. 10 Pessoas • Motor 300HP",
@@ -167,7 +167,6 @@ function aplicarFiltros() {
     renderizarBarcos(filtrados);
 }
 
-// Event Listeners (Filtra instantaneamente ao mudar qualquer campo)
 intentFilter.addEventListener("change", aplicarFiltros);
 typeFilter.addEventListener("change", aplicarFiltros);
 priceFilter.addEventListener("change", aplicarFiltros);
@@ -179,7 +178,6 @@ btnReset.addEventListener("click", () => {
     renderizarBarcos(barcos);
 });
 
-// Controle do header com verificação de direção de scroll
 const header = document.querySelector('.header');
 let lastScrollY = window.scrollY;
 
@@ -195,6 +193,36 @@ window.addEventListener('scroll', () => {
     lastScrollY = currentScrollY;
 }, { passive: true });
 
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+const imgLua = './styles/img/lua.png';
+const imgSol = './styles/img/sol.png';
+
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    if (themeIcon) {
+        themeIcon.src = imgSol;
+        themeIcon.alt = 'Modo Claro';
+    }
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        
+        const isDark = document.body.classList.contains('dark-theme');
+        
+        if (themeIcon) {
+            themeIcon.src = isDark ? imgSol : imgLua;
+            themeIcon.alt = isDark ? 'Modo Claro' : 'Modo Escuro';
+        }
+        
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}
 
 
 // Inicializa o catálogo ao carregar a página
