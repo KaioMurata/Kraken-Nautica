@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Kraken Náutica | Venda e Aluguel de Embarcações</title>
+</head>
+<body>
+
+    <!-- Header / Menu Navegação -->
+    <header class="header">
+        <div class="header-container">
+            <div class="brand-area">
+                <a href="#" class="logo-link">
+                    <img src="./styles/img/logo.png" alt="Kraken Náutica Logo" class="logo">
+                </a>
+                <h1 class="brand-title">KRAKEN NÁUTICA</h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#catalogo">Embarcações</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato" class="btn-contact-nav">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Conquiste os Mares com Exclusividade</h2>
+                <p>Venda e aluguel das melhores lanchas, iates, veleiros e jet skis da região.</p>
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn btn-primary">Ver Embarcações</a>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20anunciar%20meu%20barco" target="_blank" class="btn btn-outline">Anuncie seu Barco</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtro Dinâmico -->
+        <section class="search-section">
+            <form class="search-bar" id="search-form">
+                <div class="form-group">
+                    <label for="intent">Objetivo</label>
+                    <select id="intent" name="intent">
+                        <option value="todos">Todos</option>
+                        <option value="venda">Venda</option>
+                        <option value="aluguel">Aluguel</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Tipo de Barco</label>
+                    <select id="type" name="type">
+                        <option value="todos">Todos os Tipos</option>
+                        <option value="lancha">Lancha</option>
+                        <option value="iate">Iate</option>
+                        <option value="veleiro">Veleiro</option>
+                        <option value="jetski">Jet Ski</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Faixa de Preço</label>
+                    <select id="price" name="price">
+                        <option value="todos">Qualquer Valor</option>
+                        <option value="1">Até R$ 200.000 (ou até R$ 2.000/dia)</option>
+                        <option value="2">R$ 200.000 a R$ 500.000 (ou R$ 2.000 a R$ 5.000/dia)</option>
+                        <option value="3">Acima de R$ 500.000 (ou acima de R$ 5.000/dia)</option>
+                    </select>
+                </div>
+
+                <div class="form-group btn-group-filter">
+                    <button type="button" id="btn-reset" class="btn btn-outline-dark">Limpar Filtros</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Catálogo de Cards -->
+        <section id="catalogo" class="catalog-container">
+            <div class="section-header">
+                <h2>Nossas Embarcações</h2>
+                <p>Confira nossa frota exclusiva disponível para venda e locação</p>
+            </div>
+
+            <div class="cards-grid" id="cards-grid">
+                <!-- Inserido dinamicamente pelo script.js -->
+            </div>
+        </section>
+
+        <!-- Diferenciais / Serviços -->
+        <section id="servicos" class="services-section">
+            <h2>Por que escolher a Kraken Náutica?</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="icon">⚓</div>
+                    <h3>Frota Inspecionada</h3>
+                    <p>Todas as embarcações passam por uma rigorosa revisão mecânica e de segurança.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon">📜</div>
+                    <h3>Documentação 100% Ok</h3>
+                    <p>Suporte completo com transferência, registros e licenças junto à Marinha.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon">🛥️</div>
+                    <h3>Marinheiros Qualificados</h3>
+                    <p>Para o aluguel, oferecemos a opção de marinheiros experientes e habilitados.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Kraken Náutica</h3>
+                <p>Sua parceira de confiança para realizar o sonho de navegar com segurança e conforto.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#catalogo">Embarcações</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>📍 Marina Central, Vaga 12 - SP</p>
+                <p>📞 (11) 99999-9999</p>
+                <p>✉️ contato@krakennautica.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kraken Náutica. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
