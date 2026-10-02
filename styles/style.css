@@ -429,30 +429,24 @@ body {
     }
 }
 
-/* Transições suaves para os elementos do Header */
 .header, 
 .logo, 
 .brand-title {
     transition: all 0.3s ease;
 }
 
-/* Estilos aplicados quando a página é rolada (Classe .shrunk) */
 .header.shrunk {
     padding: 0.4rem 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header.shrunk .logo {
-    width: 80px; /* Reduz o tamanho da logo */
+    width: 80px; 
 }
 
 .header.shrunk .brand-title {
-    font-size: 1.2rem; /* Reduz o título da marca */
+    font-size: 1.2rem; 
 }
-
-/* ========================================================
-   CORREÇÃO DE LARGURA DO FILTRO NO TELEMÓVEL
-   ======================================================== */
 
 .search-bar, 
 .search-bar * {
@@ -476,10 +470,130 @@ body {
         grid-template-columns: 1fr !important;
         padding: 1rem;
         gap: 0.8rem;
-        overflow: hidden; /* Evita que qualquer elemento saia do cartão */
+        overflow: hidden; 
     }
 
     .form-group {
         width: 100%;
     }
+}
+
+.btn-theme-toggle {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0;
+    line-height: inherit;
+    transition: color 0.3s ease;
+}
+
+.btn-theme-toggle:hover {
+    color: #33D9FF;
+}
+
+.btn-theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #33D9FF;
+}
+
+body.dark-theme {
+    background-color: #0b0f12;
+    color: #e0e6ed;
+}
+
+body.dark-theme .search-bar,
+body.dark-theme .card,
+body.dark-theme .services-section {
+    background-color: #141b22;
+    color: #e0e6ed;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .form-group label,
+body.dark-theme .service-item h3,
+body.dark-theme .card-body h3,
+body.dark-theme .section-header h2,
+body.dark-theme .services-section h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .form-group select {
+    background-color: #1d2733;
+    color: #ffffff;
+    border-color: #334155;
+}
+
+body.dark-theme .specs,
+body.dark-theme .price span {
+    color: #94a3b8;
+}
+
+body.dark-theme .price {
+    color: #33D9FF; 
+}
+
+body.dark-theme .btn-card {
+    background-color: #a855f7; 
+    color: #ffffff;
+}
+
+body.dark-theme .btn-card:hover {
+    background-color: #9333ea;
+}
+
+body.dark-theme .btn-outline-dark {
+    border-color: #33D9FF;
+    color: #33D9FF;
+}
+
+body.dark-theme .btn-outline-dark:hover {
+    background-color: #33D9FF;
+    color: #0b0f12;
+}
+
+body.dark-theme .footer {
+    background-color: #070a0d;
+}
+
+body.dark-theme .footer-bottom {
+    background-color: #040608;
+}
+
+.theme-icon-img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.btn-theme-toggle:hover .theme-icon-img {
+    transform: scale(1.1);
+}
+
+body.dark-theme .card {
+    border: 2px solid #a855f7; 
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); 
+}
+
+body.dark-theme .card:hover {
+    border-color: #9333ea; 
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+body:not(.dark-theme) .card {
+    border: 2px solid DarkSlateGrey;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body:not(.dark-theme) .card:hover {
+    border-color: #1e3a3a; 
+    box-shadow: 0 6px 15px rgba(47, 79, 79, 0.25);
 }
